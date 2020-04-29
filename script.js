@@ -9,6 +9,8 @@ var a = 0;
 var timeLeft = 60;
 var score = 0;
 var timeInterval;
+var usernumber = 0;     //I was trying to use this to create a list of users
+var form = document.querySelector("form")
 
 //Setting Timer
 timer.setAttribute("style", "text-align:right");
@@ -81,15 +83,31 @@ answerSection.addEventListener("click", function(event){      //Question 1
 
 //Runs
 function finalScore(){
-    console.log("Hello")
     clearInterval(timeInterval);
     body.textContent = "";
     answerSection.textContent = "";
     var username = prompt("What is your name: ")
-    body.textContent = username + ", your final score is " + score + "points"
+    body.textContent = username + ", your final score is " + score + " points"
+    
+    localStorage.setItem("name", username);
+    localStorage.setItem("score", score)
     
 }
  
-function restartGame(){
-    console.log("Restart")
+
+function restartGame(timeInterval){
+    usernumber++;
+    timeLeft = 60;
+    score = 0;
+        q=0;
+        a=0;
+newQuestion()
+}
+//This displays the last score, but I wanted to create a high scores list
+function lastScore(){
+    var HighestName = localStorage.getItem("name")
+var HighestScore = localStorage.getItem("score")
+    body.textContent = HighestName + " had " + HighestScore + " points";
+    answerSection.textContent = "";
+   
 }
