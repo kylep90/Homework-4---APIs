@@ -9,7 +9,7 @@ var a = 0;
 var timeLeft = 60;
 var score = 0;
 var timeInterval;
-var usernumber = 0;     //I was trying to use this to create a list of users
+var usernumber = 0;     //I was trying to use this to create a list of users to save in localStorage
 var form = document.querySelector("form")
 
 //Setting Timer
