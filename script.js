@@ -76,7 +76,7 @@ answerSection.addEventListener("click", function(event){      //Question 1
 }
     else{
         timeLeft = timeLeft - 15;
-        alert("wrong")
+        alert("Wrong")
     }
     newQuestion();
 })
@@ -106,7 +106,7 @@ newQuestion()
 //This displays the last score, but I wanted to create a high scores list
 function lastScore(){
     var HighestName = localStorage.getItem("name")
-var HighestScore = localStorage.getItem("score")
+    var HighestScore = localStorage.getItem("score")
     body.textContent = HighestName + " had " + HighestScore + " points";
     answerSection.textContent = "";
    
