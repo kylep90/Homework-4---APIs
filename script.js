@@ -37,12 +37,13 @@ var answers =  [
 //Runs through arrays everytime an answer is pressed. Repeats until
 //all questions have been shown.
 function newQuestion(){
+    startButton.style.display = "none";
     if(q < 5){
-        body.textContent = questions[q];
+        questionSection.textContent = questions[q];
         answerSection.textContent = "";
             for( var i = 0; i<4; i++){
                var answerbutton = document.createElement("button");
-                      answerbutton.setAttribute("class", "btn btn-primary");
+                      answerbutton.setAttribute("class", "btn btn-danger");
                       answerbutton.setAttribute("id", i);
                       answerbutton.textContent = answers[a][i];
                   answerSection.append(answerbutton)}
